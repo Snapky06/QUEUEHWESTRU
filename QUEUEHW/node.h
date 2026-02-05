@@ -8,13 +8,11 @@ struct Node{
 
     Node(T newValue){
         this->next = nullptr;
-        this->Data = newValue;
         this->Date = QDate::currentDate();
         this->num = "";
     }
 
     Node<T>* next;
-    T Data;
     QDate Date;
     std::string num;
 };

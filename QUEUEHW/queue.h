@@ -21,14 +21,11 @@ public:
     }
 
     ~Queue() {
-        Node<T>* it = this->head;
-        while (it!=nullptr) {
-            dequeue();
-        }
+        clear();
     }
 
-    void enqueue(T newValue){
-        Node<T>*  newNode = new Node<T>(newValue);
+    void enqueue(){
+        Node<T>*  newNode = new Node<T>(count);
         count++;
         newNode->num = "A" + std::to_string(count);
         if(this->head == nullptr){
@@ -42,7 +39,6 @@ public:
         }
         cout<< "\nCreated The Ticket"
             << "\nPosition In The Queue : " << newNode->num
-             << "\nWith The Value : " << newNode->Data
              <<"\nIn The Day : " << newNode->Date.toString("dd/MM/yyyy").toStdString() <<"\n"<< endl;
         return;
     }
@@ -56,7 +52,6 @@ public:
         this->head = tmp->next;
         cout<< "\nPassed The Ticket"
             << "\nPosition In The Queue : " << tmp->num
-             << "\nWith The Value : " << tmp->Data
              <<"\nIn The Day : " << tmp->Date.toString("dd/MM/yyyy").toStdString() <<"\n" << endl;
         delete tmp;
             return;
@@ -67,7 +62,7 @@ public:
             cout << "\nQueue Is Empty\n" << endl;
             return ;
         }
-        cout << this->head->Data << endl;
+        cout <<"\nNext In Line Is The Ticket : "<< this->head->num <<"\n"<< endl;
         return;
     }
 
@@ -110,7 +105,6 @@ public:
         Node<T>* it = this->head;
         while(it!=nullptr){
             cout << "\nPosition In The Queue : " << it->num
-                 << "\nWith The Value : " << it->Data
                  <<"\nIn The Day : " << it->Date.toString("dd/MM/yyyy").toStdString()<< "\n" << endl;
             it = it->next;
         }
