@@ -46,7 +46,8 @@ int main(int argc, char *argv[])
             break;
 
         case 5:
-        cout << "Type The Desired Ticket : ";
+        cout << "Type The Desired Ticket : "
+             << "Ex. A[Number]";
             cin >> tick;
         if(Tickets.search(tick)){
                 cout<< "\nFound In The Queue\n"<< endl;
