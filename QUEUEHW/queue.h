@@ -77,13 +77,15 @@ public:
             }
             it = it->next;
         }
+        return false;
         }
         return false;
     }
 
     void clear(){
         if(this->head == nullptr){
-            cout << "\nQueue Is Empty\n" << endl;
+            count = 0;
+            cout << "\nCleared The Queue\n" << endl;
             return;
         }
         Node<T>* it = this->head;
